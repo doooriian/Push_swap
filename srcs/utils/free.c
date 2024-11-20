@@ -6,13 +6,13 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:23:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/19 18:12:55 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/20 19:23:42 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	ft_free_split(char **argv)
+void	free_split(char **argv)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ void	ft_free_split(char **argv)
 	free(argv);
 }
 
-static void	ft_free_stack(t_stack **stack)
+static void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*current_node;
@@ -46,9 +46,9 @@ static void	ft_free_stack(t_stack **stack)
 
 void	free_error(t_stack **stack, char **argv, bool is_split)
 {
-	ft_free_stack(stack);
+	free_stack(stack);
 	if (is_split)
-		ft_free_split(argv);
+		free_split(argv);
 	write(2, "error\n", 6);
 	exit (1);
 }

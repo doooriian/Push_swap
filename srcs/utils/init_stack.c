@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:50:42 by doley             #+#    #+#             */
-/*   Updated: 2024/11/20 16:13:14 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/20 19:22:49 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ void	init_stack_a(t_stack **stack_a, char **argv, bool is_split)
 		i++;
 	}
 	if (is_split)
-		ft_free_split(argv);
+		free_split(argv);
 }
