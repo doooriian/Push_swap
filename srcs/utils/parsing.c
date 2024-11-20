@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 15:41:36 by doley             #+#    #+#             */
-/*   Updated: 2024/11/19 18:09:07 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/20 15:56:14 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static bool	check_repetition(t_stack *stack, int nbr)
 {
 	if (!stack)
 		return (1);
-	while (stack->next != NULL)
+	while (stack != NULL)
 	{
 		if (stack->nbr == nbr)
 			return (0);

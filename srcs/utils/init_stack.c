@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:50:42 by doley             #+#    #+#             */
-/*   Updated: 2024/11/19 17:40:45 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/20 16:13:14 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	init_stack_a(t_stack **stack_a, char **argv, bool is_split)
 	long	nbr;
 	size_t	i;
 
+	if (!argv[0])
+		free_error(stack_a, argv, is_split);
 	i = 0;
 	while (argv[i])
 	{
