@@ -9,14 +9,16 @@ RM		= rm -f
 LIBFT_DIR = includes/Libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRC		= srcs/main.c \
+SRC		= srcs/algo/sort_three.c \
+			srcs/algo/utils.c \
+			srcs/main.c \
 		  	srcs/moves/push.c \
 			srcs/moves/reverse_rotate.c \
 			srcs/moves/rotate.c \
 			srcs/moves/swap.c \
-		  	srcs/utils/free.c \
-			srcs/utils/init_stack.c \
-			srcs/utils/parsing.c
+		  	srcs/parsing/free.c \
+			srcs/parsing/init_stack.c \
+			srcs/parsing/parsing.c
 
 OBJS	= $(SRC:.c=.o)
 

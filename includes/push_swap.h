@@ -46,4 +46,10 @@ t_stack	*find_last_node(t_stack *stack);
 void	init_stack_a(t_stack **stack_a, char **argv, bool is_split);
 bool	ft_parsing(t_stack *stack, char *str, long nbr);
 
+
+/* FUNCTIONS */
+void	sort_three(t_stack **stack_a);
+bool	is_sorted(t_stack *stack_a);
+t_stack	*find_max(t_stack *stack);
+
 #endif
