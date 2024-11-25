@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:23:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/20 19:23:42 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/25 16:38:43 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	free_split(char **argv)
 	free(argv);
 }
 
-static void	free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*current_node;

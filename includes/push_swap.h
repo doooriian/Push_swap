@@ -48,6 +48,8 @@ bool	ft_parsing(t_stack *stack, char *str, long nbr);
 
 
 /* FUNCTIONS */
+void	free_stack(t_stack **stack);
+int	stack_len(t_stack *stack);
 void	sort_three(t_stack **stack_a);
 bool	is_sorted(t_stack *stack_a);
 t_stack	*find_max(t_stack *stack);

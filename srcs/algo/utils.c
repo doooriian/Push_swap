@@ -6,11 +6,24 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:27:52 by doley             #+#    #+#             */
-/*   Updated: 2024/11/25 16:16:52 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/25 16:31:01 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+int	stack_len(t_stack *stack)
+{
+	int	count;
+
+	count = 0;
+	while (stack != NULL)
+	{
+		count++;
+		stack = stack->next;
+	}
+	return (count);
+}
 
 t_stack	*find_max(t_stack *stack)
 {

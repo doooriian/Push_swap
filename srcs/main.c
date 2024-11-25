@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:46:30 by doley             #+#    #+#             */
-/*   Updated: 2024/11/25 16:26:47 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/25 16:38:34 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,14 @@ int main(int argc, char **argv)
 		init_stack_a(&stack_a, ft_split(argv[1], ' '), 1);
 	else
 		init_stack_a(&stack_a, argv + 1, 0);
-	// pb(&stack_a, &stack_b);
-	// verif(stack_a, stack_b);
-	sort_three(&stack_a);
+	if (!is_sorted(stack_a))
+	{
+		if (stack_len(stack_a) == 2)
+			sa(&stack_a);
+		else if (stack_len(stack_a) == 3)
+			sort_three(&stack_a);
+		else
+			sort_stack(&stack_a, &stack_b);
+	}
+	free_stack(&stack_a);
 }
