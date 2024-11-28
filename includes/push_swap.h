@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:40:54 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:53:52 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 18:45:43 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ t_stack	*return_cheapest(t_stack *stack);
 void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name);
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
 void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
-void	pushing(t_stack **a, t_stack **b, char dest_name);
+void	push_a_to_b(t_stack **a, t_stack **b);
+void	push_b_to_a(t_stack **a, t_stack **b);
 void	sort_three(t_stack **stack_a);
 void	set_data(t_stack *a, t_stack *b, char stack_name);
 void	sort_stack(t_stack **a, t_stack **b);

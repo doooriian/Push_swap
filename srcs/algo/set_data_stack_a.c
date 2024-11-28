@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:11:06 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:29:15 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 18:37:01 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	set_cost(t_stack *a, t_stack *b)
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
-	while (a)
+	while (a != NULL)
 	{
 		b = a->target_node;
 		cost_a = individual_cost(a->index, len_a, a->above_half);

@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:09:07 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:51:25 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 18:55:42 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,4 @@ void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 		rrr(a, b);
 	set_index_and_half(*a);
 	set_index_and_half(*b);
-}
-
-void	pushing(t_stack **a, t_stack **b, char dest_name)
-{
-	t_stack	*cheapest_node;
-
-	cheapest_node = return_cheapest(*a);
-	if (cheapest_node->above_half
-		&& cheapest_node->target_node->above_half)
-		rev_rotate_both(a, b, cheapest_node);
-	else if (!(cheapest_node->above_half)
-		&& !(cheapest_node->target_node->above_half))
-		rotate_both(a, b, cheapest_node);
-	prep_for_push(a, cheapest_node, 'a');
-	prep_for_push(b, cheapest_node->target_node, 'b');
-	if (dest_name == 'a')
-		pa(a, b);
-	else
-		pb(a, b);
 }

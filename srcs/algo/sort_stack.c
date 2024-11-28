@@ -6,11 +6,43 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:39:47 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:35:46 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 18:56:19 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	push_a_to_b(t_stack **a, t_stack **b)
+{
+	t_stack	*cheapest_node;
+
+	cheapest_node = return_cheapest(*a);
+	if (cheapest_node->above_half
+		&& cheapest_node->target_node->above_half)
+		rev_rotate_both(a, b, cheapest_node);
+	else if (!(cheapest_node->above_half)
+		&& !(cheapest_node->target_node->above_half))
+		rotate_both(a, b, cheapest_node);
+	prep_for_push(a, cheapest_node, 'a');
+	prep_for_push(b, cheapest_node->target_node, 'b');
+		pb(a, b);
+}
+
+void	push_b_to_a(t_stack **a, t_stack **b)
+{
+	t_stack	*cheapest_node;
+
+	cheapest_node = return_cheapest(*b);
+	if (cheapest_node->above_half
+		&& cheapest_node->target_node->above_half)
+		rev_rotate_both(b, a, cheapest_node);
+	else if (!(cheapest_node->above_half)
+		&& !(cheapest_node->target_node->above_half))
+		rotate_both(b, a, cheapest_node);
+	prep_for_push(b, cheapest_node, 'b');
+	prep_for_push(a, cheapest_node->target_node, 'a');
+	pa(a, b);
+}
 
 void	set_data(t_stack *a, t_stack *b, char stack_name)
 {
@@ -42,14 +74,14 @@ void	sort_stack(t_stack **a, t_stack **b)
 	while (len_a > 3 && !(is_sorted(*a)))
 	{
 		set_data(*a, *b, 'a');
-		pushing(a, b, 'b');
+		push_a_to_b(a, b);
 		len_a--;
 	}
 	sort_three(a);
 	while (*b)
 	{
 		set_data(*a, *b, 'b');
-		pushing(b, a, 'a');
+		push_b_to_a(a, b);
 	}
 	set_index_and_half(*a);
 	min_on_top(a);

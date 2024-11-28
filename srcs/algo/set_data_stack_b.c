@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:46:20 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:29:59 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 18:10:31 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	set_target_node_b(t_stack	*a, t_stack *b)
 		current_a = a;
 		while (current_a != NULL)
 		{
-			if (current_a->nbr < b->nbr
-				&& current_a->nbr > best_target)
+			if (current_a->nbr > b->nbr
+				&& current_a->nbr < best_target)
 			{
 				best_target = current_a->nbr;
 				target_node = current_a;
