@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:39:47 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 18:56:19 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 19:13:14 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push_a_to_b(t_stack **a, t_stack **b)
 		rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
-		pb(a, b);
+	pb(a, b);
 }
 
 void	push_b_to_a(t_stack **a, t_stack **b)
