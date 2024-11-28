@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:20:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/25 16:25:31 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:31:24 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_three(t_stack **stack_a)
 {
-	t_stack *max_node;
+	t_stack	*max_node;
 
 	max_node = find_max(*stack_a);
 	if (*stack_a == max_node)

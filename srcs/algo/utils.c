@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:27:52 by doley             #+#    #+#             */
-/*   Updated: 2024/11/25 16:31:01 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:31:06 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_stack	*find_max(t_stack *stack)
 	{
 		if (stack->nbr > max->nbr)
 			max = stack;
-	 	stack = stack->next;
+		stack = stack->next;
 	}
 	return (max);
 }

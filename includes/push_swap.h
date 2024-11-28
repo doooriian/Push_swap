@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:40:54 by doley             #+#    #+#             */
-/*   Updated: 2024/11/20 19:14:32 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:14:48 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,20 @@
 
 typedef struct	s_stack
 {
-	int	nbr;
+	int				nbr;
+	struct s_data	*data;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
 
+typedef struct	s_data
+{
+	int				index;
+	int				push_cost;
+	bool			cheapest;
+	bool			above_half;
+	struct	s_stack	*target_node;
+}	t_data;
 
 /* MOVES */
 void	ss(t_stack **stack_a, t_stack **stack_b);
