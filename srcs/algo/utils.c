@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:27:52 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:30:26 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 19:11:06 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ void	min_on_top(t_stack **a)
 	while ((*a)->nbr != find_min(*a)->nbr)
 	{
 		if (find_min(*a)->above_half)
-			ra(a);
-		else
 			rra(a);
+		else
+			ra(a);
 	}
 }
