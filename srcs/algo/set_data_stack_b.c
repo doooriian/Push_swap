@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:46:20 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 15:49:43 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:29:59 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	set_target_node_b(t_stack	*a, t_stack *b)
 			current_a = current_a->next;
 		}
 		if (best_target == LONG_MAX)
-			b->data->target_node = find_min(a);
+			b->target_node = find_min(a);
 		else
-			b->data->target_node = target_node;
+			b->target_node = target_node;
 		b = b->next;
 	}
 }

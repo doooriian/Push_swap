@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:19:59 by doley             #+#    #+#             */
-/*   Updated: 2024/11/20 19:12:18 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 16:17:06 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ void	rrb(t_stack **stack)
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **stack)
+void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	reverse_rotate(stack);
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
 	write(1, "rrr\n", 4);
 }

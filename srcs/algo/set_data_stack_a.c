@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:11:06 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 15:47:36 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:29:15 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	set_index_and_half(t_stack *stack)
 	int		i;
 	int		half;
 
-	if (!(stack))
+	if (!stack)
 		return ;
 	i = 0;
 	half = stack_len(stack) / 2;
 	while (stack != NULL)
 	{
-		stack->data->index = i;
+		stack->index = i;
 		if (i < half)
-			stack->data->above_half = false;
+			stack->above_half = false;
 		else
-			stack->data->above_half = true;
+			stack->above_half = true;
 		i++;
 		stack = stack->next;
 	}
@@ -54,9 +54,9 @@ void	set_target_node_a(t_stack	*a, t_stack *b)
 			current_b = current_b->next;
 		}
 		if (best_target == LONG_MIN)
-			a->data->target_node = find_max(b);
+			a->target_node = find_max(b);
 		else
-			a->data->target_node = target_node;
+			a->target_node = target_node;
 		a = a->next;
 	}
 }
@@ -80,18 +80,18 @@ void	set_cost(t_stack *a, t_stack *b)
 	len_b = stack_len(b);
 	while (a)
 	{
-		b = a->data->target_node;
-		cost_a = individual_cost(a->data->index, len_a, a->data->above_half);
-		cost_b = individual_cost(b->data->index, len_b, b->data->above_half);
-		if (a->data->above_half == b->data->above_half)
+		b = a->target_node;
+		cost_a = individual_cost(a->index, len_a, a->above_half);
+		cost_b = individual_cost(b->index, len_b, b->above_half);
+		if (a->above_half == b->above_half)
 		{
 			if (cost_a >= cost_b)
-				a->data->push_cost = cost_a;
+				a->push_cost = cost_a;
 			else
-				a->data->push_cost = cost_b;
+				a->push_cost = cost_b;
 		}
 		else
-			a->data->push_cost = cost_a + cost_b;
+			a->push_cost = cost_a + cost_b;
 		a = a->next;
 	}
 }
@@ -103,10 +103,10 @@ void	set_cheapest(t_stack *stack)
 	current_cheapest = stack;
 	while (stack != NULL)
 	{
-		stack->data->cheapest = false;
-		if (stack->data->push_cost < current_cheapest->data->push_cost)
+		stack->cheapest = false;
+		if (stack->push_cost < current_cheapest->push_cost)
 			current_cheapest = stack;
 		stack = stack->next;
 	}
-	current_cheapest->data->cheapest = true;
+	current_cheapest->cheapest = true;
 }

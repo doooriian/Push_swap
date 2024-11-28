@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:27:52 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 15:31:06 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:30:26 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,22 @@ int	stack_len(t_stack *stack)
 		stack = stack->next;
 	}
 	return (count);
+}
+
+t_stack	*find_min(t_stack *stack)
+{
+	t_stack	*min;
+
+	if (!stack)
+		return (NULL);
+	min = stack;
+	while (stack != NULL)
+	{
+		if (stack->nbr < min->nbr)
+			min = stack;
+		stack = stack->next;
+	}
+	return (min);
 }
 
 t_stack	*find_max(t_stack *stack)
@@ -52,4 +68,15 @@ bool	is_sorted(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (1);
+}
+
+void	min_on_top(t_stack **a)
+{
+	while ((*a)->nbr != find_min(*a)->nbr)
+	{
+		if (find_min(*a)->above_half)
+			ra(a);
+		else
+			rra(a);
+	}
 }
