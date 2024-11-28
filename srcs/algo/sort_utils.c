@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:09:07 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:33:48 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:51:25 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
 		if (stack_name == 'a')
 		{
 			if (top_node->above_half)
-				ra(stack);
-			else
 				rra(stack);
+			else
+				ra(stack);
 		}
 		else if (stack_name == 'b')
 		{
 			if (top_node->above_half)
-				rb(stack);
-			else
 				rrb(stack);
+			else
+				rb(stack);
 		}
 	}
 }
@@ -69,10 +69,10 @@ void	pushing(t_stack **a, t_stack **b, char dest_name)
 	cheapest_node = return_cheapest(*a);
 	if (cheapest_node->above_half
 		&& cheapest_node->target_node->above_half)
-		rotate_both(a, b, cheapest_node);
+		rev_rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->above_half)
 		&& !(cheapest_node->target_node->above_half))
-		rev_rotate_both(a, b, cheapest_node);
+		rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
 	if (dest_name == 'a')

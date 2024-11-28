@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 16:39:47 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 16:47:31 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:35:46 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void	sort_stack(t_stack **a, t_stack **b)
 	while (len_a > 3 && !(is_sorted(*a)))
 	{
 		set_data(*a, *b, 'a');
-		pushing(a, b);
+		pushing(a, b, 'b');
 		len_a--;
 	}
 	sort_three(a);
 	while (*b)
 	{
 		set_data(*a, *b, 'b');
-		pushing(b, a);
+		pushing(b, a, 'a');
 	}
 	set_index_and_half(*a);
 	min_on_top(a);

@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:40:54 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 17:33:30 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:53:52 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int				nbr;
 	int				index;
@@ -47,7 +47,7 @@ void	rrb(t_stack **stack);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
-int	stack_len(t_stack *stack);
+int		stack_len(t_stack *stack);
 t_stack	*find_min(t_stack *stack);
 t_stack	*find_max(t_stack *stack);
 bool	is_sorted(t_stack *stack_a);
