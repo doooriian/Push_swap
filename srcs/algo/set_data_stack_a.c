@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_data_stack.c                                   :+:      :+:    :+:   */
+/*   set_data_stack_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 14:11:06 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 15:44:43 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/28 15:47:36 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	set_index_and_half(t_stack *stack)
 	}
 }
 
-void	set_target_node(t_stack	*a, t_stack *b)
+void	set_target_node_a(t_stack	*a, t_stack *b)
 {
 	long	best_target;
 	t_stack	*current_b;
