@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 21:29:39 by doley             #+#    #+#             */
-/*   Updated: 2024/11/19 15:01:32 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 16:21:25 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <limits.h>
 
 typedef struct s_list
 {

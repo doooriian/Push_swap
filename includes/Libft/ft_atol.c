@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:59:52 by doley             #+#    #+#             */
-/*   Updated: 2024/11/19 15:01:42 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 16:21:54 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ long	ft_atol(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (res > (LONG_MAX - (str[i] - '0')) / 10)
+			return (LONG_MAX);
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
