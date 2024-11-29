@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 15:20:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/29 20:05:55 by doley            ###   ########.fr       */
+/*   Created: 2024/11/29 17:01:23 by doley             #+#    #+#             */
+/*   Updated: 2024/11/29 20:13:31 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "./include/bonus.h"
 
-void	sort_three(t_stack **stack_a)
+int	main(int argc, char **argv)
 {
-	t_stack	*max_node;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-	max_node = find_max(*stack_a);
-	if (*stack_a == max_node)
-		ra(stack_a, true);
-	else if ((*stack_a)->next == max_node)
-		rra(stack_a, true);
-	if (!is_sorted(*stack_a))
-		sa(stack_a, true);
+	if (argc <= 1)
+		return (-1);
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc == 2)
+		init_stack_a(&stack_a, ft_split(argv[1], ' '), 1);
+	else
+		init_stack_a(&stack_a, argv + 1, 0);
+	ft_check(&stack_a, &stack_b);
+	free_stack(&stack_a);
 }

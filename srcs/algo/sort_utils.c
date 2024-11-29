@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:09:07 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 18:55:42 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 20:06:19 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
 		if (stack_name == 'a')
 		{
 			if (top_node->above_half)
-				rra(stack);
+				rra(stack, true);
 			else
-				ra(stack);
+				ra(stack, true);
 		}
 		else if (stack_name == 'b')
 		{
 			if (top_node->above_half)
-				rrb(stack);
+				rrb(stack, true);
 			else
-				rb(stack);
+				rb(stack, true);
 		}
 	}
 }
@@ -49,7 +49,7 @@ void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*a != cheapest_node && *b != cheapest_node->target_node)
-		rr(a, b);
+		rr(a, b, true);
 	set_index_and_half(*a);
 	set_index_and_half(*b);
 }
@@ -57,7 +57,7 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*a != cheapest_node && *b != cheapest_node->target_node)
-		rrr(a, b);
+		rrr(a, b, true);
 	set_index_and_half(*a);
 	set_index_and_half(*b);
 }

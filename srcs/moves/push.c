@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:19:20 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 16:23:47 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 20:00:30 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ static void	push(t_stack **src_stack, t_stack **dest_stack)
 	*dest_stack = target_node;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	pa(t_stack **stack_a, t_stack **stack_b, bool do_write)
 {
 	push(stack_b, stack_a);
-	write(1, "pa\n", 3);
+	if (do_write)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b, bool do_write)
 {
 	push(stack_a, stack_b);
-	write(1, "pb\n", 3);
+	if (do_write)
+		write(1, "pb\n", 3);
 }

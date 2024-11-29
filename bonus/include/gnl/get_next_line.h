@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 15:20:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/29 20:05:55 by doley            ###   ########.fr       */
+/*   Created: 2024/10/17 12:30:03 by doley             #+#    #+#             */
+/*   Updated: 2024/10/28 13:29:22 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	sort_three(t_stack **stack_a)
-{
-	t_stack	*max_node;
+# include <unistd.h>
+# include <stdlib.h>
 
-	max_node = find_max(*stack_a);
-	if (*stack_a == max_node)
-		ra(stack_a, true);
-	else if ((*stack_a)->next == max_node)
-		rra(stack_a, true);
-	if (!is_sorted(*stack_a))
-		sa(stack_a, true);
-}
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*get_next_line(int fd);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+#endif

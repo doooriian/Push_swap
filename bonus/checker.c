@@ -1,0 +1,121 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/29 17:27:12 by doley             #+#    #+#             */
+/*   Updated: 2024/11/29 21:13:41 by doley            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./include/bonus.h"
+
+static t_moves	*find_last_move(t_moves *list)
+{
+	if (!list)
+		return (NULL);
+	while (list->next != NULL)
+		list = list->next;
+	return (list);
+}
+
+static bool	is_move(char *str)
+{
+	if (ft_strncmp(str, "pb\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "pa\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "ra\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "rb\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "rr\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "rra\n", 4) == 0)
+		return (1);
+	if (ft_strncmp(str, "rrb\n", 4) == 0)
+		return (1);
+	if (ft_strncmp(str, "rrr\n", 4) == 0)
+		return (1);
+	if (ft_strncmp(str, "sa\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "sb\n", 3) == 0)
+		return (1);
+	if (ft_strncmp(str, "ss\n", 3) == 0)
+		return (1);
+	return (0);
+}
+
+static void	ft_execute(t_stack **a, t_stack **b, char *str)
+{
+	if (ft_strncmp(str, "pb\n", 3) == 0)
+		pb(b, a, false);
+	else if (ft_strncmp(str, "pa\n", 3) == 0)
+		pa(b, a, false);
+	else if (ft_strncmp(str, "ra\n", 3) == 0)
+		ra(a, true);
+	else if (ft_strncmp(str, "rb\n", 3) == 0)
+		rb(b, true);
+	else if (ft_strncmp(str, "rr\n", 3) == 0)
+		rr(a, b, true);
+	else if (ft_strncmp(str, "rra\n", 4) == 0)
+		rra(a, true);
+	else if (ft_strncmp(str, "rrb\n", 4) == 0)
+		rrb(b, true);
+	else if (ft_strncmp(str, "rrr\n", 4) == 0)
+		rrr(a, b, true);
+	else if (ft_strncmp(str, "sa\n", 3) == 0)
+		sa(a, true);
+	else if (ft_strncmp(str, "sb\n", 3) == 0)
+		sb(b, true);
+	else if (ft_strncmp(str, "ss\n", 3) == 0)
+		ss(a, b, true);
+}
+
+static void	add_new_move(t_moves **list, char *move)
+{
+	t_moves	*new_node;
+	t_moves	*last_node;
+
+	if (!list)
+		return ;
+	new_node = malloc(sizeof(t_stack));
+	if (!new_node)
+		return ;
+	new_node->move = move;
+	new_node->next = NULL;
+	last_node = find_last_move(*list);
+	if (!last_node)
+		*list = new_node;
+	else
+		last_node->next = new_node;
+}
+
+void	ft_check(t_stack **a, t_stack **b)
+{
+	char	*line;
+	t_moves *list;
+
+	list = NULL;
+	while ((line = get_next_line(0)))
+	{
+		if (!is_move(line))
+		{
+			free(line);
+			free_error(a, NULL, 0);
+		}
+		add_new_move(&list, line);
+		free(line);
+	}
+	while (list)
+	{
+		ft_execute(a, b, list->move);
+		list = list->next;
+	}
+	if (is_sorted(*a) && !(*b))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}

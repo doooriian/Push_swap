@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 15:20:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/29 20:05:55 by doley            ###   ########.fr       */
+/*   Created: 2024/11/29 16:33:17 by doley             #+#    #+#             */
+/*   Updated: 2024/11/29 20:28:03 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#ifndef BONUS_H
+# define BONUS_H
 
-void	sort_three(t_stack **stack_a)
+# include "gnl/get_next_line.h"
+# include "../../includes/push_swap.h"
+
+typedef struct s_moves
 {
-	t_stack	*max_node;
+	char			*move;
+	struct s_moves	*next;
+}	t_moves;
 
-	max_node = find_max(*stack_a);
-	if (*stack_a == max_node)
-		ra(stack_a, true);
-	else if ((*stack_a)->next == max_node)
-		rra(stack_a, true);
-	if (!is_sorted(*stack_a))
-		sa(stack_a, true);
-}
+void	ft_check(t_stack **a, t_stack **b);
+
+#endif

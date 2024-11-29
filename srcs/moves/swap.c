@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:17:35 by doley             #+#    #+#             */
-/*   Updated: 2024/11/20 19:12:29 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 20:03:09 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@ static void	swap(t_stack **stack)
 	(*stack)->prev = NULL;
 }
 
-void	sa(t_stack **stack)
+void	sa(t_stack **stack, bool do_write)
 {
 	swap(stack);
-	write(1, "sa\n", 3);
+	if (do_write)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack **stack)
+void	sb(t_stack **stack, bool do_write)
 {
 	swap(stack);
-	write(1, "sb\n", 3);
+	if (do_write)
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b, bool do_write)
 {
 	swap(stack_a);
 	swap(stack_b);
-	write(1, "ss\n", 3);
+	if (do_write)
+		write(1, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 16:19:59 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 16:17:06 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 20:01:27 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@ static void	reverse_rotate(t_stack **stack)
 	*stack = last_node;
 }
 
-void	rra(t_stack **stack)
+void	rra(t_stack **stack, bool do_write)
 {
 	reverse_rotate(stack);
-	write(1, "rra\n", 4);
+	if (do_write)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack **stack)
+void	rrb(t_stack **stack, bool do_write)
 {
 	reverse_rotate(stack);
-	write(1, "rrb\n", 4);
+	if (do_write)
+		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b, bool do_write)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	write(1, "rrr\n", 4);
+	if (do_write)
+		write(1, "rrr\n", 4);
 }

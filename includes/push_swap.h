@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:40:54 by doley             #+#    #+#             */
-/*   Updated: 2024/11/28 18:45:43 by doley            ###   ########.fr       */
+/*   Updated: 2024/11/29 20:05:00 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ void	init_stack_a(t_stack **stack_a, char **argv, bool is_split);
 void	free_split(char **argv);
 void	free_stack(t_stack **stack);
 void	free_error(t_stack **stack, char **argv, bool is_split);
-void	sa(t_stack **stack);
-void	sb(t_stack **stack);
-void	ss(t_stack **stack_a, t_stack **stack_b);
-void	ra(t_stack **stack);
-void	rb(t_stack **stack);
-void	rr(t_stack **stack_a, t_stack **stack_b);
-void	rra(t_stack **stack);
-void	rrb(t_stack **stack);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **stack, bool do_write);
+void	sb(t_stack **stack, bool do_write);
+void	ss(t_stack **stack_a, t_stack **stack_b, bool do_write);
+void	ra(t_stack **stack, bool do_write);
+void	rb(t_stack **stack, bool do_write);
+void	rr(t_stack **stack_a, t_stack **stack_b, bool do_write);
+void	rra(t_stack **stack, bool do_write);
+void	rrb(t_stack **stack, bool do_write);
+void	rrr(t_stack **stack_a, t_stack **stack_b, bool do_write);
+void	pa(t_stack **stack_a, t_stack **stack_b, bool do_write);
+void	pb(t_stack **stack_a, t_stack **stack_b, bool do_write);
 int		stack_len(t_stack *stack);
 t_stack	*find_min(t_stack *stack);
 t_stack	*find_max(t_stack *stack);
