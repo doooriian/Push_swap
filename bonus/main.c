@@ -6,11 +6,29 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:01:23 by doley             #+#    #+#             */
-/*   Updated: 2024/11/29 20:13:31 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/02 18:46:29 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/bonus.h"
+
+void	free_moves(t_moves **list)
+{
+	t_moves	*current;
+	t_moves	*tmp;
+
+	if (!list || !*list)
+		return ;
+	current = *list;
+	while (current)
+	{
+		tmp = current;
+		free(tmp->move);
+		free(tmp);
+		current = current->next;
+	}
+	*list = NULL;
+}
 
 int	main(int argc, char **argv)
 {

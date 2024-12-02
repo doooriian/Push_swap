@@ -1,70 +1,62 @@
-NAME	= push_swap
+CC          = cc
+CFLAGS		= -Wall -Wextra -Werror
+RM          = rm -f
 
-CC		= cc
+NAME        = push_swap
+BONUS_NAME  = checker
 
-CFLAGS	= -Wall -Wextra -Werror -g3
+LIBFT_DIR   = includes/Libft
+LIBFT       = $(LIBFT_DIR)/libft.a
 
-RM		= rm -f
+COMMON_SRC  = \
+    srcs/algo/set_data_stack_a.c \
+    srcs/algo/set_data_stack_b.c \
+    srcs/algo/sort_stack.c \
+    srcs/algo/sort_three.c \
+    srcs/algo/sort_utils.c \
+    srcs/algo/utils.c \
+    srcs/moves/push.c \
+    srcs/moves/reverse_rotate.c \
+    srcs/moves/rotate.c \
+    srcs/moves/swap.c \
+    srcs/parsing/free.c \
+    srcs/parsing/init_stack.c \
+    srcs/parsing/parsing.c
 
-LIBFT_DIR = includes/Libft
-LIBFT = $(LIBFT_DIR)/libft.a
+PUSH_SWAP_SRC = $(COMMON_SRC) srcs/main.c
+PUSH_SWAP_OBJS = $(PUSH_SWAP_SRC:.c=.o)
 
-SRC		=	srcs/algo/set_data_stack_a.c \
-			srcs/algo/set_data_stack_b.c \
-			srcs/algo/sort_stack.c \
-			srcs/algo/sort_three.c \
-			srcs/algo/sort_utils.c \
-			srcs/algo/utils.c \
-			srcs/moves/push.c \
-			srcs/moves/reverse_rotate.c \
-			srcs/moves/rotate.c \
-			srcs/moves/swap.c \
-			srcs/parsing/free.c \
-			srcs/parsing/init_stack.c \
-			srcs/parsing/parsing.c \
-			srcs/main.c
+CHECKER_SRC = $(COMMON_SRC) \
+    bonus/main.c \
+    bonus/checker.c \
+    bonus/include/gnl/get_next_line.c \
+    bonus/include/gnl/get_next_line_utils.c
+CHECKER_OBJS = $(CHECKER_SRC:.c=.o)
 
-OBJS	= $(SRC:.c=.o)
+all: $(NAME)
 
-$(NAME) : $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+$(NAME): $(LIBFT) $(PUSH_SWAP_OBJS)
+	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(LIBFT) -o $(NAME)
+
+bonus: $(LIBFT) $(BONUS_NAME)
+
+$(BONUS_NAME): $(CHECKER_OBJS)
+	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(LIBFT) -o $(BONUS_NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-all : $(NAME)
-
-clean :
-	$(RM) $(OBJS)
+clean:
+	$(RM) $(PUSH_SWAP_OBJS) $(CHECKER_OBJS)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
-fclean : clean
-	$(RM) $(NAME)
+fclean: clean
+	$(RM) $(NAME) $(BONUS_NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
-re : fclean all
+re: fclean all
 
-BONUS_NAME = checker
-BONUS_SRC = bonus/main.c \
-            bonus/checker.c \
-            srcs/algo/set_data_stack_a.c \
-			srcs/algo/set_data_stack_b.c \
-			srcs/algo/sort_stack.c \
-			srcs/algo/sort_three.c \
-			srcs/algo/sort_utils.c \
-			srcs/algo/utils.c \
-			srcs/moves/push.c \
-			srcs/moves/reverse_rotate.c \
-			srcs/moves/rotate.c \
-			srcs/moves/swap.c \
-			srcs/parsing/free.c \
-			srcs/parsing/init_stack.c \
-			srcs/parsing/parsing.c \
-            bonus/include/gnl/get_next_line.c \
-            bonus/include/gnl/get_next_line_utils.c
-BONUS_OBJS = $(BONUS_SRC:.c=.o)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(LIBFT) $(BONUS_OBJS)
-	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(BONUS_NAME)
-
-.PHONY : all clean fclean re
+.PHONY: all bonus clean fclean re
