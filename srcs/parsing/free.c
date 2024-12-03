@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 16:23:01 by doley             #+#    #+#             */
-/*   Updated: 2024/11/25 16:38:43 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/03 20:05:04 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	free_split(char **argv)
 	size_t	i;
 
 	i = 0;
-	if (!argv || !*argv)
-		return ;
 	while (argv[i])
 	{
 		free(argv[i]);
