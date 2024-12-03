@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:27:12 by doley             #+#    #+#             */
-/*   Updated: 2024/12/02 18:45:50 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/03 16:48:07 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void	ft_check(t_stack **a, t_stack **b)
 		if (!is_move(line))
 		{
 			free_moves(&list);
+			free(line);
 			free_error(a, NULL, 0);
 		}
 		add_new_move(&list, line);
@@ -116,8 +117,4 @@ void	ft_check(t_stack **a, t_stack **b)
 		list = list->next;
 	}
 	free_moves(&list);
-	if (is_sorted(*a) && !(*b))
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
 }
