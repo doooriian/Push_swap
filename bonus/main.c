@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:01:23 by doley             #+#    #+#             */
-/*   Updated: 2024/12/03 16:48:32 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/05 13:44:34 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int argc, char **argv)
 	else
 		init_stack_a(&stack_a, argv + 1, 0);
 	ft_check(&stack_a, &stack_b);
-	if (is_sorted(*a) && !(*b))
+	if (is_sorted(stack_a) && !(stack_b))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
