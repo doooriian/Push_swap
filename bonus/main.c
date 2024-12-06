@@ -6,7 +6,7 @@
 /*   By: doley <doley@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:01:23 by doley             #+#    #+#             */
-/*   Updated: 2024/12/05 13:44:34 by doley            ###   ########.fr       */
+/*   Updated: 2024/12/06 15:18:07 by doley            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,6 @@ int	main(int argc, char **argv)
 	else
 		write(1, "KO\n", 3);
 	free_stack(&stack_a);
+	if (stack_b)
+		free_stack(&stack_b);
 }
