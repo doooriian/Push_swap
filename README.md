@@ -70,8 +70,6 @@ make re
 
 ```
 
-## 🚀 How to Run the Program
-
 To run the program, provide a list of integers as arguments:
 
 ```bash
