@@ -1,14 +1,15 @@
 <br />
 <p align="center">
-  <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/1200px-42_Logo.svg.png">
+  <a href="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/logo.png">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/1200px-42_Logo.svg.png" alt="42 Logo" width="250" height="250">
   </a>
 
   <h1 align="center">Push_swap</h1>
 
   <p align="center">
-    A 42 School project to sort a stack of integers using a minimal number of operations
-    <br /><br />
+    A sorting algorithm project from 42 School
+    <br />
+    <br />
     <img src="https://github.com/doooriian/42-Badges/blob/main/badges/push_swapm.png" alt="Push_swap Badge" width="150">
   </p>
 </p>
@@ -17,50 +18,40 @@
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Push_swap?color=1A237E" />
   <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Push_swap?color=00BCD4" />
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Push_swap?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/doooriian/Push_swap?color=D32F2F" />
+  <img alt="GitHub last commit" src="https://img.shields.io/github/languages/top/doooriian/Push_swap?color=D32F2F" />
 </p>
+
 ---
 
 ## ✨ Overview
 
-**Push_swap** is an individual project at 42 School that challenges you to sort a stack of integers with the fewest possible operations. This project focuses on mastering data structures, honing algorithmic skills, and optimizing the limited set of allowed operations.
+**Push_swap** is an individual project at 42 School that challenges students to sort a stack of integers using two stacks and a limited set of operations. The objective is to achieve a fully sorted stack in the fewest moves possible, emphasizing algorithm optimization and efficient stack manipulation.
 
-For this project, I tackled the bonus requirements and slightly improved the Turkish algorithm initially described in this resource:  
-- [Medium Article – Push_swap](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
-
-**Bonus Optimization:**  
-I refined the Turkish algorithm by slightly modifying its logic. In particular, when two numbers are either both above or both below the median, the algorithm performs a grouped rotation (rotating both simultaneously in the same direction) to reduce the total number of operations required.
+For this project, I implemented the **Turkish algorithm**, a proven strategy for solving Push_swap efficiently, inspired by [this resource](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) from its creator. To meet the bonus requirements—which demand sorting within an even stricter move limit—I optimized the algorithm by checking if both numbers to be moved are above or below the median. This allowed me to perform simultaneous rotations (e.g., `rr` or `rrr`) when possible, reducing the total number of moves.
 
 ---
 
 ## 📑 Key Features
 
-- **Optimized Turkish Algorithm:**  
-  Implementation and enhancement of the Turkish algorithm with bonus optimizations that group rotations when both numbers are on the same side of the median.
-  
-- **Full Bonus Implementation:**  
-  All bonus features have been implemented to meet the project requirements.
-  
-- **Visualization & Testing:**  
-  - Integrated with the [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer) for a graphical display of the sorting process.
-  - Tested against the [push_swap-testeur-max](https://gitlab.com/nda-cunh/push_swap-testeur-max) to ensure compliance with the expected standards.
-
-**Resources Used:**  
-- Turkish algorithm explanation: [Medium – Push_swap](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)  
-- Interactive visualizer: [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)  
-- Comprehensive tester: [push_swap-testeur-max](https://gitlab.com/nda-cunh/push_swap-testeur-max)
+- **Sorting Algorithm**: Utilizes the Turkish algorithm for optimal stack sorting.
+- **Operations**: Implements all required stack operations:
+  - `sa`, `sb`, `ss` — Swap the top two elements of stack A, B, or both.
+  - `pa`, `pb` — Push an element from stack A to B or vice versa.
+  - `ra`, `rb`, `rr` — Rotate stack A, B, or both upward.
+  - `rra`, `rrb`, `rrr` — Reverse rotate stack A, B, or both downward.
+- **Optimization**: Enhanced the Turkish algorithm to perform simultaneous rotations when both numbers are on the same side of the median, minimizing move count.
+- **Bonus Achievement**: Meets the bonus criteria by staying below the required move threshold.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **[C](https://devdocs.io/c/)** — Primary programming language.
-- **[Makefile](https://www.gnu.org/software/make/manual/make.html)** — For build automation.
-- **[Git](https://git-scm.com/)** — Version control.
+- **[C](https://devdocs.io/c/)** — Core programming language.
+- **[Makefile](https://www.gnu.org/software/make/manual/make.html)** — Build automation tool.
 
 ---
 
-## 🚀 How to Compile and Run
+## 🚀 How to Build and Run
 
 Clone the repository and use the following commands in your terminal:
 
@@ -71,41 +62,68 @@ make all
 # Remove object files
 make clean
 
-# Remove object files and executables
+# Remove object files and executable
 make fclean
 
-# Recompile from scratch after cleanup
+# Clean and recompile
 make re
 
 ```
 
-> **Note:** Ensure that your 42 environment is correctly set up before compiling.
+## 🚀 How to Run the Program
 
-## 🎨 Visual Example
+To run the program, provide a list of integers as arguments:
 
-**Tip for inserting a screenshot:**  
-- Use your preferred screenshot tool to capture the visualizer output (e.g., from push_swap_visualizer).  
-- Host the image on an online platform like GitHub, Imgur, etc.  
-- Replace `YOUR_IMAGE_URL` with the direct URL to your image.
+```bash
+./push_swap 3 1 4 2
 
-**Example:**
-
-![Visualization Example](YOUR_IMAGE_URL)
-
+```
 ## 🧪 Testing
 
-This project was rigorously tested using:
-- The **push_swap_visualizer** to observe real-time operations.
-- The **push_swap-testeur-max** to validate robustness and efficiency, especially for the bonus optimizations.
+The implementation was thoroughly tested using the following tools:
+
+- [**Push_swap Visualizer**](https://github.com/o-reo/push_swap_visualizer)
+  : A tool that allows step-by-step visualization of the sorting process.
+- [**Push_swap Tester**](https://gitlab.com/nda-cunh/push_swap-testeur-max)
+  : A combined visualizer and tester to verify both correctness and efficiency of moves.
+
+Additionally, custom test cases were created to check edge cases and ensure compliance with bonus requirements.
+
+---
+
+## 📸 Visual Example
+
+[Insert a visual example here, such as a screenshot or GIF showing the sorting process.]
+
+### How to Add a Visual Example:
+To include a visual in your project:
+1. Capture a screenshot or record a GIF using tools like [ShareX](https://getsharex.com/) (Windows) or [Kap](https://getkap.co/) (macOS) while running the Push_swap Visualizer.
+2. Upload the file (e.g., `sorting.gif`) to your GitHub repository, ideally in a folder like `assets/`.
+3. Replace this placeholder with the following Markdown code:  
+   ```markdown
+   ![Sorting Process](assets/sorting.gif)
+
+**Note:** Adjust the file path (`assets/sorting.gif`) to match where you stored your visual.
+
+---
 
 ## ✅ Results
 
-Below are some performance and quality indicators achieved:
+Here’s my score for the Push_swap project:
 
 <p align="center">
-  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/100Grade.png" alt="Push_swap Grade">
+  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/LibftGrade.png" alt="Push_swap Grade">
 </p>
+
+---
+
+## 📚 Resources
+
+- [**Turkish Algorithm Explanation**](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
+  : A comprehensive guide written by the algorithm’s creator, which was the basis for this implementation.
+
+---
 
 ## 📬 Contact
 
-Feel free to reach out or contribute to this project via [GitHub](https://github.com/doooriian/Push_swap)!
+Feel free to reach out or contribute to this project on [GitHub](https://github.com/doooriian)!
