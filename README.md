@@ -93,17 +93,7 @@ Additionally, custom test cases were created to check edge cases and ensure comp
 
 ## 📸 Visual Example
 
-[Insert a visual example here, such as a screenshot or GIF showing the sorting process.]
-
-### How to Add a Visual Example:
-To include a visual in your project:
-1. Capture a screenshot or record a GIF using tools like [ShareX](https://getsharex.com/) (Windows) or [Kap](https://getkap.co/) (macOS) while running the Push_swap Visualizer.
-2. Upload the file (e.g., `sorting.gif`) to your GitHub repository, ideally in a folder like `assets/`.
-3. Replace this placeholder with the following Markdown code:
-4. 
-   ![Sorting Process]([assets/sorting.gif](https://github.com/doooriian/42-Badges/blob/main/push_swap.gif))
-
-**Note:** Adjust the file path (`assets/sorting.gif`) to match where you stored your visual.
+   ![Sorting Process](https://github.com/doooriian/42-Badges/blob/main/push_swap.gif)
 
 ---
 
