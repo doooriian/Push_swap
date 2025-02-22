@@ -99,9 +99,9 @@ Additionally, custom test cases were created to check edge cases and ensure comp
 To include a visual in your project:
 1. Capture a screenshot or record a GIF using tools like [ShareX](https://getsharex.com/) (Windows) or [Kap](https://getkap.co/) (macOS) while running the Push_swap Visualizer.
 2. Upload the file (e.g., `sorting.gif`) to your GitHub repository, ideally in a folder like `assets/`.
-3. Replace this placeholder with the following Markdown code:  
-   ```markdown
-   ![Sorting Process](assets/sorting.gif)
+3. Replace this placeholder with the following Markdown code:
+4. 
+   ![Sorting Process]([assets/sorting.gif](https://github.com/doooriian/42-Badges/blob/main/push_swap.gif))
 
 **Note:** Adjust the file path (`assets/sorting.gif`) to match where you stored your visual.
 
