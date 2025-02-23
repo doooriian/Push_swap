@@ -91,7 +91,7 @@ Additionally, custom test cases were created to check edge cases and ensure comp
 
 ## 📸 Visual Example
 
-   ![Sorting Process](https://github.com/doooriian/42-Badges/blob/main/push_swap.gif)
+   ![Sorting Process](https://github.com/doooriian/42-Badges/blob/main/Push_swap.gif)
 
 ---
 
