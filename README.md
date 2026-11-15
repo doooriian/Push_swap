@@ -2,8 +2,6 @@
 
 > **42 School project** · C · Sorting algorithms
 
-A constrained sorting challenge: sort a sequence of integers using two stacks and a restricted set of operations.
-
 ## Overview
 
 A constrained sorting challenge: sort a sequence of integers using two stacks and a restricted set of operations.
