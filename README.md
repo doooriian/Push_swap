@@ -4,24 +4,16 @@
 
 # Push_swap
 
-**42 School · 🔄 Software engineering project**
+**42 School project · Constrained sorting algorithms**
 
 <img src="https://img.shields.io/badge/42_Project-C%20%7C%20Algorithms-2563EB?style=flat-square" alt="Push_swap technology" />
 <img src="https://img.shields.io/badge/Documentation-Project_Overview-334155?style=flat-square" alt="Project documentation" />
 
 </div>
 
----
-
-
----
-
 ## 🔎 Overview
 
 A constrained sorting challenge: sort a sequence of integers using two stacks and a restricted set of operations.
-
-
----
 
 ## ✨ Features
 
@@ -30,17 +22,11 @@ A constrained sorting challenge: sort a sequence of integers using two stacks an
 - Implement sorting logic with an explicit operation sequence
 - Provide a bonus `checker` program to validate a sequence of moves
 
-
----
-
 ## 🧩 Technical approach
 
 Parsing, stack operations and sorting routines are separated into distinct source directories. The bonus checker reuses the core operations.
 
 > **Tech stack** · C · Algorithms · Stacks · Make.
-
-
----
 
 ## 🚀 Build and usage
 
@@ -59,15 +45,9 @@ ARG='3 2 1'
 ./push_swap $ARG | ./checker $ARG
 ```
 
-
----
-
 ## 🧪 Verification
 
 Review the output with representative inputs and edge cases. No automated CI test suite is included in this repository; build and behaviour should be verified in a compatible local environment.
-
-
----
 
 ## ⚠️ Notes and limitations
 
