@@ -1,117 +1,51 @@
-<br />
-<p align="center">
-  <a href="https://42.fr/">
-    <img src="https://github.com/doooriian/42-Badges/blob/main/42_Logo.png" alt="42 Logo" width="250" height="250">
-  </a>
+# Push_swap
 
-  <h1 align="center">Push_swap</h1>
+> **42 School project** · C · Sorting algorithms
 
-  <p align="center">
-    A sorting algorithm project from 42 School
-    <br />
-    <br />
-    <img src="https://github.com/doooriian/42-Badges/blob/main/badges/push_swapm.png" alt="Push_swap Badge" width="150">
-  </p>
-</p>
+A constrained sorting challenge: sort a sequence of integers using two stacks and a restricted set of operations.
 
-<p align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Push_swap?color=1A237E" />
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Push_swap?color=00BCD4" />
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Push_swap?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/languages/top/doooriian/Push_swap?color=D32F2F" />
-</p>
+## Overview
 
----
+A constrained sorting challenge: sort a sequence of integers using two stacks and a restricted set of operations.
 
-## ✨ Overview
+## Features
 
-**Push_swap** is an individual project at 42 School that challenges students to sort a stack of integers using two stacks and a limited set of operations. The objective is to achieve a fully sorted stack in the fewest moves possible, emphasizing algorithm optimization and efficient stack manipulation.
+- Validate inputs and initialize the stack
+- Generate stack operations including swaps, pushes and rotations
+- Implement sorting logic with an explicit operation sequence
+- Provide a bonus `checker` program to validate a sequence of moves
 
-For this project, I implemented the **Turkish algorithm**, a proven strategy for solving Push_swap efficiently, inspired by [this resource](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) from its creator. To meet the bonus requirements—which demand sorting within an even stricter move limit—I optimized the algorithm by checking if both numbers to be moved are above or below the median. This allowed me to perform simultaneous rotations (e.g., `rr` or `rrr`) when possible, reducing the total number of moves.
+## Technical approach
 
----
+Parsing, stack operations and sorting routines are separated into distinct source directories. The bonus checker reuses the core operations.
 
-## 📑 Key Features
+**Stack:** C · Algorithms · Stacks · Make.
 
-- **Sorting Algorithm**: Utilizes the Turkish algorithm for optimal stack sorting.
-- **Operations**: Implements all required stack operations:
-  - `sa`, `sb`, `ss` — Swap the top two elements of stack A, B, or both.
-  - `pa`, `pb` — Push an element from stack A to B or vice versa.
-  - `ra`, `rb`, `rr` — Rotate stack A, B, or both upward.
-  - `rra`, `rrb`, `rrr` — Reverse rotate stack A, B, or both downward.
-- **Optimization**: Enhanced the Turkish algorithm to perform simultaneous rotations when both numbers are on the same side of the median, minimizing move count.
-- **Bonus Achievement**: Meets the bonus criteria by staying below the required move threshold.
-
----
-
-## 🛠️ Technologies Used
-
-- **[C](https://devdocs.io/c/)** — Core programming language.
-- **[Makefile](https://www.gnu.org/software/make/manual/make.html)** — Build automation tool.
-
----
-
-## 🚀 How to Build and Run
-
-Clone the repository and use the following commands in your terminal:
+## Build and usage
 
 ```bash
-# Compile the project
-make all
-
-# Remove object files
-make clean
-
-# Remove object files and executable
-make fclean
-
-# Clean and recompile
-make re
-
+git clone https://github.com/doooriian/Push_swap.git
+cd Push_swap
+make
+./push_swap 3 2 1
 ```
 
-To run the program, provide a list of integers as arguments:
+Prints operations that sort the input. The checker can be built separately:
 
 ```bash
-./push_swap 3 1 4 2
-
+make bonus
+ARG='3 2 1'
+./push_swap $ARG | ./checker $ARG
 ```
-## 🧪 Testing
 
-The implementation was thoroughly tested using the following tools:
+## Verification
 
-- [**Push_swap Visualizer**](https://github.com/o-reo/push_swap_visualizer)
-  : A tool that allows step-by-step visualization of the sorting process.
-- [**Push_swap Tester**](https://gitlab.com/nda-cunh/push_swap-testeur-max)
-  : A combined visualizer and tester to verify both correctness and efficiency of moves.
+Review the output with representative inputs and edge cases. No automated CI test suite is included in this repository; build and behaviour should be verified in a compatible local environment.
 
-Additionally, custom test cases were created to check edge cases and ensure compliance with bonus requirements.
+## Notes and limitations
+
+The generated operation count varies with the input. The aim is to sort correctly with as few allowed moves as practical, not to provide a general-purpose sorting API.
 
 ---
 
-## 📸 Visual Example
-
-   ![Sorting Process](https://github.com/doooriian/42-Badges/blob/main/Push_swap.gif)
-
----
-
-## ✅ Results
-
-Here’s my score for the Push_swap project:
-
-<p align="center">
-  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/LibftGrade.png" alt="Push_swap Grade">
-</p>
-
----
-
-## 📚 Resources
-
-- [**Turkish Algorithm Explanation**](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
-  : A comprehensive guide written by the algorithm’s creator, which was the basis for this implementation.
-
----
-
-## 📬 Contact
-
-Feel free to reach out or contribute to this project on [GitHub](https://github.com/doooriian)!
+Part of the [42 curriculum](https://42.fr/). Explore the other projects on [my GitHub profile](https://github.com/doooriian).
