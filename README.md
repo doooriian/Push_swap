@@ -65,6 +65,16 @@ To run the program, provide a list of integers as arguments:
 ./push_swap 3 1 4 2
 
 ```
+
+
+For the bonus checker, build it and pipe the generated moves into `checker`:
+
+```bash
+make bonus
+ARG="3 1 4 2"
+./push_swap $ARG | ./checker $ARG
+```
+
 ## 🧪 Testing
 
 The implementation was thoroughly tested using the following tools:
