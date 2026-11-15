@@ -1,29 +1,18 @@
-<br />
-<p align="center">
-  <a href="https://42.fr/">
-    <img src="https://github.com/doooriian/42-Badges/blob/main/42_Logo.png" alt="42 Logo" width="250" height="250">
-  </a>
+<div align="center">
 
-  <h1 align="center">Push_swap</h1>
+<a href="https://42.fr/"><img src="https://raw.githubusercontent.com/doooriian/42-Badges/main/badges/push_swapm.png" width="125" alt="Push_swap 42 project badge" /></a>
 
-  <p align="center">
-    A sorting algorithm project from 42 School
-    <br />
-    <br />
-    <img src="https://github.com/doooriian/42-Badges/blob/main/badges/push_swapm.png" alt="Push_swap Badge" width="150">
-  </p>
-</p>
+# Push_swap
 
-<p align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/doooriian/Push_swap?color=1A237E" />
-  <img alt="Code language count" src="https://img.shields.io/github/languages/count/doooriian/Push_swap?color=00BCD4" />
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/doooriian/Push_swap?color=7B1FA2" />
-  <img alt="GitHub last commit" src="https://img.shields.io/github/languages/top/doooriian/Push_swap?color=D32F2F" />
-</p>
+**Algorithms and stack operations**
+
+<img src="https://img.shields.io/badge/42%20School-Project-D97706?style=flat-square" alt="42 School project" />
+
+</div>
 
 ---
 
-## ✨ Overview
+## 🔎 Overview
 
 **Push_swap** is an individual project at 42 School that challenges students to sort a stack of integers using two stacks and a limited set of operations. The objective is to achieve a fully sorted stack in the fewest moves possible, emphasizing algorithm optimization and efficient stack manipulation.
 
@@ -31,7 +20,7 @@ For this project, I implemented the **Turkish algorithm**, a proven strategy for
 
 ---
 
-## 📑 Key Features
+## ✨ Key Features
 
 - **Sorting Algorithm**: Utilizes the Turkish algorithm for optimal stack sorting.
 - **Operations**: Implements all required stack operations:
@@ -76,6 +65,16 @@ To run the program, provide a list of integers as arguments:
 ./push_swap 3 1 4 2
 
 ```
+
+
+For the bonus checker, build it and pipe the generated moves into `checker`:
+
+```bash
+make bonus
+ARG="3 1 4 2"
+./push_swap $ARG | ./checker $ARG
+```
+
 ## 🧪 Testing
 
 The implementation was thoroughly tested using the following tools:
@@ -87,21 +86,6 @@ The implementation was thoroughly tested using the following tools:
 
 Additionally, custom test cases were created to check edge cases and ensure compliance with bonus requirements.
 
----
-
-## 📸 Visual Example
-
-   ![Sorting Process](https://github.com/doooriian/42-Badges/blob/main/Push_swap.gif)
-
----
-
-## ✅ Results
-
-Here’s my score for the Push_swap project:
-
-<p align="center">
-  <img src="https://github.com/doooriian/42-Badges/blob/main/badges/LibftGrade.png" alt="Push_swap Grade">
-</p>
 
 ---
 
